@@ -1,0 +1,8 @@
+duckdb:
+  outputs:
+    dev:
+      type: duckdb
+      path: ":memory:"
+      # plugins:
+      #   - module: delta
+  target: dev
