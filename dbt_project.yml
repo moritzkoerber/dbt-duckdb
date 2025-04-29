@@ -16,4 +16,5 @@ clean-targets:
 
 models:
   duckdb:
-    +materialized: view
+    read:
+      +materialized: view
