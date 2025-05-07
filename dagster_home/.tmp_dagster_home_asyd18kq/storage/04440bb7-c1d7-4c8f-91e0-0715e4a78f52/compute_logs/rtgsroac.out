@@ -1,0 +1,20 @@
+Running with dbt=1.9.4
+Registered adapter: duckdb=1.9.3
+Found 2 models, 2 data tests, 1 source, 428 macros
+
+Concurrency: 1 threads (target='dev')
+
+1 of 4 START test assert_z_lt_17 ............................................... [RUN]
+1 of 4 PASS assert_z_lt_17 ..................................................... [[32mPASS[0m in 0.03s]
+2 of 4 START test source_not_null_raw_data_area1_Z ............................. [RUN]
+2 of 4 PASS source_not_null_raw_data_area1_Z ................................... [[32mPASS[0m in 0.02s]
+3 of 4 START sql view model main.read .......................................... [RUN]
+3 of 4 OK created sql view model main.read ..................................... [[32mOK[0m in 0.03s]
+4 of 4 START sql external model main.write ..................................... [RUN]
+4 of 4 OK created sql external model main.write ................................ [[32mOK[0m in 0.04s]
+
+Finished running 1 external model, 2 data tests, 1 view model in 0 hours 0 minutes and 1.80 seconds (1.80s).
+
+[32mCompleted successfully[0m
+
+Done. PASS=4 WARN=0 ERROR=0 SKIP=0 TOTAL=4

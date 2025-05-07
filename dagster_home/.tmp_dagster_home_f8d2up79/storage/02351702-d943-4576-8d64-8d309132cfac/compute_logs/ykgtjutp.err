@@ -1,0 +1,128 @@
+[32m2025-04-28 18:57:07 +0200[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 02351702-d943-4576-8d64-8d309132cfac - 35813 - LOGS_CAPTURED - Started capturing logs in process (pid: 35813).
+[32m2025-04-28 18:57:07 +0200[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 02351702-d943-4576-8d64-8d309132cfac - 35813 - duckdb_dbt_assets - STEP_START - Started execution of step "duckdb_dbt_assets".
+[32m2025-04-28 18:57:08 +0200[0m - dagster - [34mINFO[0m - __ASSET_JOB - 02351702-d943-4576-8d64-8d309132cfac - duckdb_dbt_assets - A dbt subsetted execution is not being performed. Using the default dbt selection arguments `['--select', 'fqn:*']`.
+INFO:dagster.builtin:__ASSET_JOB - 02351702-d943-4576-8d64-8d309132cfac - duckdb_dbt_assets - A dbt subsetted execution is not being performed. Using the default dbt selection arguments `['--select', 'fqn:*']`.
+[32m2025-04-28 18:57:08 +0200[0m - dagster - [34mWARNING[0m - __ASSET_JOB - 02351702-d943-4576-8d64-8d309132cfac - duckdb_dbt_assets - An error was encountered when creating a handle to the dbt adapter in Dagster.
+Traceback (most recent call last):
+  File "/Users/moritz.koerber/.cache/uv/archive-v0/eDMZjG-TOe3cYb-NTtHGm/lib/python3.12/site-packages/dagster_dbt/core/resource.py", line 679, in cli
+    adapter = self._initialize_adapter(cli_vars)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/moritz.koerber/.cache/uv/archive-v0/eDMZjG-TOe3cYb-NTtHGm/lib/python3.12/site-packages/dagster_dbt/core/resource.py", line 371, in _initialize_adapter
+    profile = load_profile(self.project_dir, cli_vars, self.profile, self.target)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/moritz.koerber/.cache/uv/archive-v0/eDMZjG-TOe3cYb-NTtHGm/lib/python3.12/site-packages/dbt/config/runtime.py", line 79, in load_profile
+    profile = Profile.render(
+              ^^^^^^^^^^^^^^^
+  File "/Users/moritz.koerber/.cache/uv/archive-v0/eDMZjG-TOe3cYb-NTtHGm/lib/python3.12/site-packages/dbt/config/profile.py", line 402, in render
+    return cls.from_raw_profiles(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/moritz.koerber/.cache/uv/archive-v0/eDMZjG-TOe3cYb-NTtHGm/lib/python3.12/site-packages/dbt/config/profile.py", line 368, in from_raw_profiles
+    return cls.from_raw_profile_info(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/moritz.koerber/.cache/uv/archive-v0/eDMZjG-TOe3cYb-NTtHGm/lib/python3.12/site-packages/dbt/config/profile.py", line 324, in from_raw_profile_info
+    credentials: Credentials = cls._credentials_from_profile(
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/moritz.koerber/.cache/uv/archive-v0/eDMZjG-TOe3cYb-NTtHGm/lib/python3.12/site-packages/dbt/config/profile.py", line 148, in _credentials_from_profile
+    cls = load_plugin(typename)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/moritz.koerber/.cache/uv/archive-v0/eDMZjG-TOe3cYb-NTtHGm/lib/python3.12/site-packages/dbt/adapters/factory.py", line 239, in load_plugin
+    return FACTORY.load_plugin(name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/moritz.koerber/.cache/uv/archive-v0/eDMZjG-TOe3cYb-NTtHGm/lib/python3.12/site-packages/dbt/adapters/factory.py", line 68, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/moritz.koerber/.local/share/uv/python/cpython-3.12.9-macos-aarch64-none/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/Users/moritz.koerber/.cache/uv/archive-v0/eDMZjG-TOe3cYb-NTtHGm/lib/python3.12/site-packages/dbt/adapters/duckdb/__init__.py", line 2, in <module>
+    from dbt.adapters.duckdb.connections import DuckDBConnectionManager  # noqa
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/moritz.koerber/.cache/uv/archive-v0/eDMZjG-TOe3cYb-NTtHGm/lib/python3.12/site-packages/dbt/adapters/duckdb/connections.py", line 11, in <module>
+    from . import environments
+  File "/Users/moritz.koerber/.cache/uv/archive-v0/eDMZjG-TOe3cYb-NTtHGm/lib/python3.12/site-packages/dbt/adapters/duckdb/environments/__init__.py", line 16, in <module>
+    from ..plugins import BasePlugin
+  File "/Users/moritz.koerber/.cache/uv/archive-v0/eDMZjG-TOe3cYb-NTtHGm/lib/python3.12/site-packages/dbt/adapters/duckdb/plugins/__init__.py", line 8, in <module>
+    from duckdb import DuckDBPyConnection
+ImportError: cannot import name 'DuckDBPyConnection' from 'duckdb' (/Users/moritz.koerber/Documents/dbt-duckdb/duckdb/duckdb/__init__.py)
+WARNING:dagster.builtin:__ASSET_JOB - 02351702-d943-4576-8d64-8d309132cfac - duckdb_dbt_assets - An error was encountered when creating a handle to the dbt adapter in Dagster.
+Traceback (most recent call last):
+  File "/Users/moritz.koerber/.cache/uv/archive-v0/eDMZjG-TOe3cYb-NTtHGm/lib/python3.12/site-packages/dagster_dbt/core/resource.py", line 679, in cli
+    adapter = self._initialize_adapter(cli_vars)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/moritz.koerber/.cache/uv/archive-v0/eDMZjG-TOe3cYb-NTtHGm/lib/python3.12/site-packages/dagster_dbt/core/resource.py", line 371, in _initialize_adapter
+    profile = load_profile(self.project_dir, cli_vars, self.profile, self.target)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/moritz.koerber/.cache/uv/archive-v0/eDMZjG-TOe3cYb-NTtHGm/lib/python3.12/site-packages/dbt/config/runtime.py", line 79, in load_profile
+    profile = Profile.render(
+              ^^^^^^^^^^^^^^^
+  File "/Users/moritz.koerber/.cache/uv/archive-v0/eDMZjG-TOe3cYb-NTtHGm/lib/python3.12/site-packages/dbt/config/profile.py", line 402, in render
+    return cls.from_raw_profiles(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/moritz.koerber/.cache/uv/archive-v0/eDMZjG-TOe3cYb-NTtHGm/lib/python3.12/site-packages/dbt/config/profile.py", line 368, in from_raw_profiles
+    return cls.from_raw_profile_info(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/moritz.koerber/.cache/uv/archive-v0/eDMZjG-TOe3cYb-NTtHGm/lib/python3.12/site-packages/dbt/config/profile.py", line 324, in from_raw_profile_info
+    credentials: Credentials = cls._credentials_from_profile(
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/moritz.koerber/.cache/uv/archive-v0/eDMZjG-TOe3cYb-NTtHGm/lib/python3.12/site-packages/dbt/config/profile.py", line 148, in _credentials_from_profile
+    cls = load_plugin(typename)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/moritz.koerber/.cache/uv/archive-v0/eDMZjG-TOe3cYb-NTtHGm/lib/python3.12/site-packages/dbt/adapters/factory.py", line 239, in load_plugin
+    return FACTORY.load_plugin(name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/moritz.koerber/.cache/uv/archive-v0/eDMZjG-TOe3cYb-NTtHGm/lib/python3.12/site-packages/dbt/adapters/factory.py", line 68, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/moritz.koerber/.local/share/uv/python/cpython-3.12.9-macos-aarch64-none/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/Users/moritz.koerber/.cache/uv/archive-v0/eDMZjG-TOe3cYb-NTtHGm/lib/python3.12/site-packages/dbt/adapters/duckdb/__init__.py", line 2, in <module>
+    from dbt.adapters.duckdb.connections import DuckDBConnectionManager  # noqa
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/moritz.koerber/.cache/uv/archive-v0/eDMZjG-TOe3cYb-NTtHGm/lib/python3.12/site-packages/dbt/adapters/duckdb/connections.py", line 11, in <module>
+    from . import environments
+  File "/Users/moritz.koerber/.cache/uv/archive-v0/eDMZjG-TOe3cYb-NTtHGm/lib/python3.12/site-packages/dbt/adapters/duckdb/environments/__init__.py", line 16, in <module>
+    from ..plugins import BasePlugin
+  File "/Users/moritz.koerber/.cache/uv/archive-v0/eDMZjG-TOe3cYb-NTtHGm/lib/python3.12/site-packages/dbt/adapters/duckdb/plugins/__init__.py", line 8, in <module>
+    from duckdb import DuckDBPyConnection
+ImportError: cannot import name 'DuckDBPyConnection' from 'duckdb' (/Users/moritz.koerber/Documents/dbt-duckdb/duckdb/duckdb/__init__.py)
+[32m2025-04-28 18:57:08 +0200[0m - dagster - [34mINFO[0m - __ASSET_JOB - 02351702-d943-4576-8d64-8d309132cfac - duckdb_dbt_assets - Copying `/Users/moritz.koerber/Documents/dbt-duckdb/target/partial_parse.msgpack` to `/Users/moritz.koerber/Documents/dbt-duckdb/target/duckdb_dbt_assets-0235170-abf6037/partial_parse.msgpack` to take advantage of partial parsing.
+INFO:dagster.builtin:__ASSET_JOB - 02351702-d943-4576-8d64-8d309132cfac - duckdb_dbt_assets - Copying `/Users/moritz.koerber/Documents/dbt-duckdb/target/partial_parse.msgpack` to `/Users/moritz.koerber/Documents/dbt-duckdb/target/duckdb_dbt_assets-0235170-abf6037/partial_parse.msgpack` to take advantage of partial parsing.
+[32m2025-04-28 18:57:08 +0200[0m - dagster - [34mINFO[0m - __ASSET_JOB - 02351702-d943-4576-8d64-8d309132cfac - duckdb_dbt_assets - Running dbt command: `dbt build --select fqn:*`.
+INFO:dagster.builtin:__ASSET_JOB - 02351702-d943-4576-8d64-8d309132cfac - duckdb_dbt_assets - Running dbt command: `dbt build --select fqn:*`.
+[32m2025-04-28 18:57:15 +0200[0m - dagster - [34mWARNING[0m - __ASSET_JOB - 02351702-d943-4576-8d64-8d309132cfac - duckdb_dbt_assets - Logging an `AssetObservation` instead of an `AssetCheckResult` for dbt test `assert_z_lt_17`.
+
+`assert_z_lt_17` is a singular test with multiple dependencies. Configure an asset key in the test's dbt meta to load it as an asset check.
+
+This test was not included in Dagster's asset check selection, and was likely executed due to dbt indirect selection.
+WARNING:dagster.builtin:__ASSET_JOB - 02351702-d943-4576-8d64-8d309132cfac - duckdb_dbt_assets - Logging an `AssetObservation` instead of an `AssetCheckResult` for dbt test `assert_z_lt_17`.
+
+`assert_z_lt_17` is a singular test with multiple dependencies. Configure an asset key in the test's dbt meta to load it as an asset check.
+
+This test was not included in Dagster's asset check selection, and was likely executed due to dbt indirect selection.
+[32m2025-04-28 18:57:15 +0200[0m - dagster - [34mWARNING[0m - __ASSET_JOB - 02351702-d943-4576-8d64-8d309132cfac - duckdb_dbt_assets - Logging an `AssetObservation` instead of an `AssetCheckResult` for dbt test `source_not_null_raw_data_area1_Z`.
+
+This test was not included in Dagster's asset check selection, and was likely executed due to dbt indirect selection.
+WARNING:dagster.builtin:__ASSET_JOB - 02351702-d943-4576-8d64-8d309132cfac - duckdb_dbt_assets - Logging an `AssetObservation` instead of an `AssetCheckResult` for dbt test `source_not_null_raw_data_area1_Z`.
+
+This test was not included in Dagster's asset check selection, and was likely executed due to dbt indirect selection.
+[32m2025-04-28 18:57:15 +0200[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 02351702-d943-4576-8d64-8d309132cfac - 35813 - duckdb_dbt_assets - ASSET_OBSERVATION - DagsterEventType.ASSET_OBSERVATION for step duckdb_dbt_assets
+[32m2025-04-28 18:57:16 +0200[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 02351702-d943-4576-8d64-8d309132cfac - 35813 - duckdb_dbt_assets - STEP_OUTPUT - Yielded output "read" of type "Nothing". (Type check passed).
+[32m2025-04-28 18:57:16 +0200[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 02351702-d943-4576-8d64-8d309132cfac - 35813 - duckdb_dbt_assets - ASSET_MATERIALIZATION - Materialized value read.
+[32m2025-04-28 18:57:16 +0200[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 02351702-d943-4576-8d64-8d309132cfac - 35813 - duckdb_dbt_assets - STEP_OUTPUT - Yielded output "write" of type "Nothing". (Type check passed).
+[32m2025-04-28 18:57:16 +0200[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 02351702-d943-4576-8d64-8d309132cfac - 35813 - duckdb_dbt_assets - ASSET_MATERIALIZATION - Materialized value write.
+[32m2025-04-28 18:57:16 +0200[0m - dagster - [34mINFO[0m - __ASSET_JOB - 02351702-d943-4576-8d64-8d309132cfac - duckdb_dbt_assets - Finished dbt command: `dbt build --select fqn:*`.
+INFO:dagster.builtin:__ASSET_JOB - 02351702-d943-4576-8d64-8d309132cfac - duckdb_dbt_assets - Finished dbt command: `dbt build --select fqn:*`.
+[32m2025-04-28 18:57:16 +0200[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 02351702-d943-4576-8d64-8d309132cfac - 35813 - duckdb_dbt_assets - STEP_SUCCESS - Finished execution of step "duckdb_dbt_assets" in 8.6s.
